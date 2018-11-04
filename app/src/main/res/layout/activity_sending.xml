@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.jsync.fileshare.SendingActivity">
+
+    <EditText
+        android:layout_margin="8dp"
+        android:layout_alignParentTop="true"
+        android:id="@+id/edt_send_ip"
+        android:hint="Enter IP address to Send"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ProgressBar
+        android:id="@+id/pb_send_progress"
+        android:visibility="gone"
+        android:indeterminate="false"
+        android:layout_margin="8dp"
+        android:layout_below="@id/edt_send_ip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/txt_send_progress"
+        android:gravity="center"
+        android:layout_below="@id/pb_send_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btn_send_ip"
+        android:layout_margin="8dp"
+        android:text="Send"
+        android:layout_below="@id/txt_send_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+</RelativeLayout>
