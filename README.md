@@ -1,3 +1,3 @@
 # FileTransfer
 
-Transfer files from one android phone to other or even with pc(pc code not included).
+Transfer files from one android phone to another or even with pc(btw pc code not included).
