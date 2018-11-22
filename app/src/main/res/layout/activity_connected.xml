@@ -3,48 +3,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.jsync.fileshare.SendingActivity">
+    tools:context="com.jsync.fileshare.ConnectedActivity">
 
     <LinearLayout
-        android:id="@+id/layout_for_connecting"
-        android:orientation="horizontal"
         android:layout_alignParentTop="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <EditText
-            android:id="@+id/edt_send_ip"
-            android:layout_weight="1"
-            android:hint="@string/ip_address"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
-
-        <Button
-            android:id="@+id/btn_connect_sender"
-            android:text="@string/connect_btn"
-            android:textAllCaps="false"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_below="@id/layout_for_connecting"
-        android:id="@+id/layout_client_connected"
+        android:id="@+id/layout_connected"
         android:orientation="horizontal"
         android:gravity="center_horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <Button
-            android:id="@+id/btn_select_file_sender"
+            android:id="@+id/btn_select_file"
             android:text="@string/select_btn"
             android:textAllCaps="false"
             android:layout_margin="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Button
-            android:id="@+id/btn_cancel_group_sender"
+            android:id="@+id/btn_cancel_group"
             android:text="@string/cancel_btn"
             android:textAllCaps="false"
             android:layout_margin="10dp"
@@ -53,10 +30,9 @@
     </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_view_files_process_sender"
-        android:layout_below="@+id/layout_client_connected"
+        android:id="@+id/recycler_view_files_process"
+        android:layout_below="@+id/layout_connected"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
 
 </RelativeLayout>

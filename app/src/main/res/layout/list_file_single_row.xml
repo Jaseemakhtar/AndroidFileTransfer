@@ -2,16 +2,40 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="?attr/selectableItemBackground"
     android:layout_width="match_parent" android:layout_height="wrap_content">
-        <TextView
-            android:padding="4dp"
-            android:id="@+id/txt_file_name"
-            android:textSize="20sp"
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <View
-            android:layout_marginTop="4dp"
-            android:layout_below="@id/txt_file_name"
-            android:background="@drawable/line"
-            android:layout_width="match_parent"
-            android:layout_height="1dp" />
+            android:layout_height="wrap_content">
+                <ImageView
+                    android:src="@drawable/ic_file"
+                    android:scaleType="fitCenter"
+                    android:padding="4dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <LinearLayout
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+                        <TextView
+                            android:text="Android"
+                            android:id="@+id/txt_fm_name"
+                            android:textSize="24sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:text="10:30 A.M 4/02/2018"
+                            android:id="@+id/txt_fm_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <View
+                            android:layout_marginTop="2dp"
+                            android:background="@drawable/line"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"/>
+                </LinearLayout>
+        </LinearLayout>
+
 </RelativeLayout>

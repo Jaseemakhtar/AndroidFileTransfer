@@ -1,4 +1,4 @@
-package com.jsync.fileshare.listing;
+package com.jsync.fileshare.filesView;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -51,7 +51,7 @@ public class RecyclerListAdapter extends RecyclerView.Adapter<RecyclerListAdapte
         public FileDetailHolder(View itemView) {
             super(itemView);
             itemView.setOnClickListener(this);
-            txtName = itemView.findViewById(R.id.txt_file_name);
+            txtName = itemView.findViewById(R.id.txt_fm_name);
         }
 
         @Override

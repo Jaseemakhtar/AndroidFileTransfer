@@ -21,10 +21,35 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".listing.ListFiles" />
-        <activity android:name=".SendingActivity"  />
+        <activity android:name=".filesView.ListFiles" />
+        <activity android:name=".SendingActivity" />
         <activity android:name=".ReceivingActivity" />
-        <service android:name=".BackgroundService" android:exported="false" android:enabled="true" />
+
+        <service
+            android:name=".ConnectService"
+            android:enabled="true"
+            android:exported="false" />
+        <service
+            android:name=".ReceivingService"
+            android:enabled="true"
+            android:exported="false" >
+
+        </service>
+
+        <service
+            android:name=".ListeningService"
+            android:enabled="true"
+            android:exported="false" >
+
+        </service>
+
+        <service android:name=".ClientService"
+            android:enabled="true"
+            android:exported="false">
+
+        </service>
+
+        <activity android:name=".ConnectedActivity" />
     </application>
 
 </manifest>

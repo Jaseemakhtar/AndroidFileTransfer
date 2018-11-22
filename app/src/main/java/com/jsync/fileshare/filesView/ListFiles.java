@@ -1,4 +1,4 @@
-package com.jsync.fileshare.listing;
+package com.jsync.fileshare.filesView;
 
 import android.Manifest;
 import android.content.Intent;
@@ -17,8 +17,6 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.jsync.fileshare.R;
-import com.jsync.fileshare.permissionmanager.PermissionManager;
-
 import java.io.File;
 import java.util.ArrayList;
 

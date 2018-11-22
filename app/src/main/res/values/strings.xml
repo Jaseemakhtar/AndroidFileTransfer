@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">JShare</string>
+    <string name="dummy_file_name">AvengerInfinityWar.mkv</string>
+    <string name="dummy_percent">50%</string>
+    <string name="select_btn">Select File</string>
+    <string name="cancel_btn">Cancel</string>
+    <string name="ip_address">IP Address...</string>
+    <string name="connect_btn">Connect</string>
 </resources>
