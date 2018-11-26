@@ -73,7 +73,6 @@ public class SendingActivity extends AppCompatActivity implements View.OnClickLi
         edtIp = findViewById(R.id.edt_send_ip);
         recyclerView = findViewById(R.id.recycler_view_files_process_sender);
 
-
         RecyclerView.ItemAnimator animator = recyclerView.getItemAnimator();
         if (animator instanceof SimpleItemAnimator) {
             ((SimpleItemAnimator) animator).setSupportsChangeAnimations(false);
@@ -167,33 +166,31 @@ public class SendingActivity extends AppCompatActivity implements View.OnClickLi
                     if(data != null) {
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                             if (data.getClipData() != null) {
-                                try {
-                                    int fileUrisL = data.getClipData().getItemCount();
-                                    for (int i = 0; i < fileUrisL; i++) {
-                                        fileUris.add(data.getClipData().getItemAt(i).getUri());
-                                    }
 
-                                    if (clientService != null) {
-                                        clientService.setWouldRun(true, fileUris);
-                                    }
-                                } catch (NullPointerException e) {
-                                    e.printStackTrace();
-                                    Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
+                                for (int i = 0; i < data.getClipData().getItemCount(); i++) {
+                                    fileUris.add(data.getClipData().getItemAt(i).getUri());
+                                }
+
+                                if (clientService != null) {
+                                    clientService.setWouldRun(true, fileUris);
                                 }
 
                             }else{
+
                                 fileUris.add(data.getData());
                                 if (clientService != null) {
                                     clientService.setWouldRun(true, fileUris);
                                 }
                                 Toast.makeText(this, "Selected Single item", Toast.LENGTH_SHORT).show();
+
                             }
                         }
-
 
                     }else {
                         Toast.makeText(this, "No item selected", Toast.LENGTH_SHORT).show();
                     }
+                }else {
+                    Toast.makeText(this, "Result Cancel", Toast.LENGTH_SHORT).show();
                 }
 
                 break;
@@ -206,6 +203,7 @@ public class SendingActivity extends AppCompatActivity implements View.OnClickLi
         super.onPause();
         if(isBound){
             unbindService(serviceConnection);
+            isBound = false;
         }
     }
 }

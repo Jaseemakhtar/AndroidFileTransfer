@@ -10,10 +10,8 @@ import android.os.IBinder;
 import android.os.Message;
 import android.support.annotation.Nullable;
 import android.util.Log;
-
 import com.jsync.fileshare.utils.RSocket;
 import com.jsync.fileshare.utils.Utils;
-
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.File;
@@ -74,7 +72,7 @@ public class ClientService extends Service implements Runnable, Handler.Callback
 
     public void setWouldRun(boolean wouldRun, ArrayList<Uri> fileUri){
         this.wouldRun = wouldRun;
-        this.fileUri = fileUri;
+        this.fileUri.addAll(fileUri);
     }
 
     public boolean isRunning(){
@@ -138,8 +136,9 @@ public class ClientService extends Service implements Runnable, Handler.Callback
 
         while (true){
             if(wouldRun){
-                try{
 
+                try{
+                    Log.i("Socket", "Inside sending queue");
                     for(int i = indicator; i < fileUri.size(); i++) {
 
                         file = new File(Utils.getRealPathFromURI(this, fileUri.get(i)));
@@ -188,7 +187,7 @@ public class ClientService extends Service implements Runnable, Handler.Callback
                             Log.i("Socket", "Client received it successfully");
                         }
 
-                        indicator = i;
+                        indicator = i + 1;
                         Log.i("Socket", "Sending File: " + indicator);
                     }
                     wouldRun = false;
@@ -197,6 +196,8 @@ public class ClientService extends Service implements Runnable, Handler.Callback
                     wouldRun = false;
                     break;
                 }
+            }else{
+                Log.i("Socket", "Outside sending queue");
             }
         }
     }
